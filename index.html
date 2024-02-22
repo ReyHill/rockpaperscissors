@@ -14,7 +14,14 @@
         */
 
         function getComputerChoice () {
-        //  use a random number generator to produced a number that identifies an item on an array. 
+        let calc = Math.floor (Math.random() * 3 );
+        if (calc === 0) {
+            return ('Rock');
+        } else if (calc === 1) {
+            return ('Paper');
+        } else if (calc === 2) {
+            return ('Scissors');
+        }
         }
     </script>
 </body>
