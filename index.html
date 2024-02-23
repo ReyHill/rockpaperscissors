@@ -9,12 +9,12 @@
     <script>
         /*
          FUNCTION getComputerChoice - randomly return 'rock', 'paper', or 'scissors'.
-         FUNCTION playRound - plays a single round of rock paper scissors. Takes two parameters, playerSelection and computerSelection. Then, returns a string that declarse winner/tie.
+         FUNCTION playRound - plays a single round of rock paper scissors. Takes two parameters, playerSelection and computerSelection. Then, returns a string that declares winner/tie.
          FUNCTION playGame - call the playRound function five times.
         */
 
         function getComputerChoice () {
-        let calc = Math.floor (Math.random() * 3 );
+            let calc = Math.floor (Math.random() * 3 );
         if (calc === 0) {
             return ('Rock');
         } else if (calc === 1) {
@@ -22,6 +22,22 @@
         } else if (calc === 2) {
             return ('Scissors');
         }
+        }
+
+        // The return values from the functions directly above and below must be passed into the playRound function. 
+
+        function getPlayerChoice () {
+            // Consider this function's code in the playRound function instead. 
+            let input = prompt ('Rock, Paper, or Scissors?', ''); 
+            return input.toLowerCase(); 
+        }
+
+        function playRound (playerSelection, computerSelection) {
+            // Prompt player to choose rock, paper, or scissors. Use .toLowerCase() to make the player input case insensitive. 
+            // Return the value of the player's choice. (Prompts create strings by default - no conversion needed).
+            // Call getComputerChoice for computer's play and playerSelection for player's play.
+            // Use ELSE..IF conditions to specify all of the logical combinations of the game. 
+            // Remember to have an else condition for the player's input - anything that is not a game option is invalid and cancels the game. 
         }
     </script>
 </body>
