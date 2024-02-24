@@ -33,6 +33,38 @@
         }
 
         function playRound (playerSelection, computerSelection) {
+            switch (true) {
+                case playerSelection === 'Rock' && computerSelection === 'Rock':
+                    console.log ('Tie!');
+                    break; 
+                case playerSelection === 'Paper' && computerSelection === 'Paper':
+                    console.log ('Tie!');
+                    break;
+                case playerSelection === 'Scissors' && computerSelection === 'Scissors':
+                    console.log ('Tie!');
+                    break;
+                case playerSelection === 'Rock' && computerSelection === 'Paper':
+                    console.log ('Player chose Rock, Computer chose Paper. Computer wins!');
+                    break;
+                case playerSelection === 'Rock' && computerSelection === 'Scissors':
+                    console.log ('Player chose Rock, Computer chose Scissors. Player wins!');
+                    break;
+                case playerSelection === 'Paper' && computerSelection === 'Rock':
+                    console.log ('Player chose Paper, Computer chose Rock. Player wins!');
+                    break;
+                case playerSelection === 'Paper' && computerSelection === 'Scissors':
+                    console.log ('Player chose Paper, Computer chose Scissors. Computer wins!');
+                    break;
+                case playerSelection === 'Scissors' && computerSelection === 'Rock':
+                    console.log ('Player chose Scissors, Computer chose Rock. Computer wins!');
+                    break;
+                case playerSelection === 'Scissors' && computerSelection === 'Paper':
+                    console.log ('Player chose Scissors, Computer chose Paper. Computer wins!');
+                    break;
+                default:
+                    console.log ('Game failure. Check for errors.');
+                }
+
             // Prompt player to choose rock, paper, or scissors. Use .toLowerCase() to make the player input case insensitive. 
             // Return the value of the player's choice. (Prompts create strings by default - no conversion needed).
             // Call getComputerChoice for computer's play and playerSelection for player's play.
