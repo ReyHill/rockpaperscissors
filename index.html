@@ -9,6 +9,7 @@
     <script>
         /*
          FUNCTION getComputerChoice - randomly return 'rock', 'paper', or 'scissors'.
+         FUNCTION getPlayerSelection - prompts player to pick 'rock', 'paper', or 'scissors'. 
          FUNCTION playRound - plays a single round of rock paper scissors. Takes two parameters, playerSelection and computerSelection. Then, returns a string that declares winner/tie.
          FUNCTION playGame - call the playRound function five times.
         */
@@ -16,60 +17,63 @@
         function getComputerChoice () {
             let calc = Math.floor (Math.random() * 3 );
         if (calc === 0) {
-            return ('Rock');
+            return ('rock');
         } else if (calc === 1) {
-            return ('Paper');
+            return ('raper');
         } else if (calc === 2) {
-            return ('Scissors');
+            return ('scissors');
         }
         }
 
-        // The return values from the functions directly above and below must be passed into the playRound function. 
+        // The return values from the functions directly above and below must be passed into the playRound function somehow. 
+        // For now, the global constants playerSelection and computerSelection are defined with function calls as values. 
+        // It will be seen if this is a viable solution when the game needs to be run more than once - the keyword may need to be changed to 'let'. 
 
         function getPlayerChoice () {
-            // Consider this function's code in the playRound function instead. 
             let input = prompt ('Rock, Paper, or Scissors?', ''); 
-            return input.toLowerCase(); 
+            return input.toLowerCase();
         }
+
+        const playerSelection = getPlayerChoice()
+        const computerSelection = getComputerChoice ();
+
+        /* TO DO:
+        1. Place a playRound () at bottom of script. 
+        2. Replace all playRound () console.log () statements with return statements.
+        */
 
         function playRound (playerSelection, computerSelection) {
             switch (true) {
-                case playerSelection === 'Rock' && computerSelection === 'Rock':
+                case playerSelection === 'rock' && computerSelection === 'rock':
                     console.log ('Tie!');
                     break; 
-                case playerSelection === 'Paper' && computerSelection === 'Paper':
+                case playerSelection === 'paper' && computerSelection === 'paper':
                     console.log ('Tie!');
                     break;
-                case playerSelection === 'Scissors' && computerSelection === 'Scissors':
+                case playerSelection === 'scissors' && computerSelection === 'scissors':
                     console.log ('Tie!');
                     break;
-                case playerSelection === 'Rock' && computerSelection === 'Paper':
+                case playerSelection === 'rock' && computerSelection === 'paper':
                     console.log ('Player chose Rock, Computer chose Paper. Computer wins!');
                     break;
-                case playerSelection === 'Rock' && computerSelection === 'Scissors':
+                case playerSelection === 'rock' && computerSelection === 'scissors':
                     console.log ('Player chose Rock, Computer chose Scissors. Player wins!');
                     break;
-                case playerSelection === 'Paper' && computerSelection === 'Rock':
+                case playerSelection === 'paper' && computerSelection === 'rock':
                     console.log ('Player chose Paper, Computer chose Rock. Player wins!');
                     break;
-                case playerSelection === 'Paper' && computerSelection === 'Scissors':
+                case playerSelection === 'paper' && computerSelection === 'scissors':
                     console.log ('Player chose Paper, Computer chose Scissors. Computer wins!');
                     break;
-                case playerSelection === 'Scissors' && computerSelection === 'Rock':
+                case playerSelection === 'scissors' && computerSelection === 'rock':
                     console.log ('Player chose Scissors, Computer chose Rock. Computer wins!');
                     break;
-                case playerSelection === 'Scissors' && computerSelection === 'Paper':
+                case playerSelection === 'scissors' && computerSelection === 'paper':
                     console.log ('Player chose Scissors, Computer chose Paper. Computer wins!');
                     break;
                 default:
                     console.log ('Game failure. Check for errors.');
                 }
-
-            // Prompt player to choose rock, paper, or scissors. Use .toLowerCase() to make the player input case insensitive. 
-            // Return the value of the player's choice. (Prompts create strings by default - no conversion needed).
-            // Call getComputerChoice for computer's play and playerSelection for player's play.
-            // Use ELSE..IF conditions to specify all of the logical combinations of the game. 
-            // Remember to have an else condition for the player's input - anything that is not a game option is invalid and cancels the game. 
         }
     </script>
 </body>
