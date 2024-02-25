@@ -19,7 +19,7 @@
         if (calc === 0) {
             return ('rock');
         } else if (calc === 1) {
-            return ('raper');
+            return ('paper');
         } else if (calc === 2) {
             return ('scissors');
         }
@@ -37,44 +37,40 @@
         const playerSelection = getPlayerChoice()
         const computerSelection = getComputerChoice ();
 
-        /* TO DO:
-        1. Place a playRound () at bottom of script. 
-        2. Replace all playRound () console.log () statements with return statements.
-        */
-
         function playRound (playerSelection, computerSelection) {
             switch (true) {
                 case playerSelection === 'rock' && computerSelection === 'rock':
-                    console.log ('Tie!');
+                    return ('Tie!');
                     break; 
                 case playerSelection === 'paper' && computerSelection === 'paper':
-                    console.log ('Tie!');
+                    return ('Tie!');
                     break;
                 case playerSelection === 'scissors' && computerSelection === 'scissors':
-                    console.log ('Tie!');
+                    return ('Tie!');
                     break;
                 case playerSelection === 'rock' && computerSelection === 'paper':
-                    console.log ('Player chose Rock, Computer chose Paper. Computer wins!');
+                    return ('Player chose Rock, Computer chose Paper. Computer wins!');
                     break;
                 case playerSelection === 'rock' && computerSelection === 'scissors':
-                    console.log ('Player chose Rock, Computer chose Scissors. Player wins!');
+                    return ('Player chose Rock, Computer chose Scissors. Player wins!');
                     break;
                 case playerSelection === 'paper' && computerSelection === 'rock':
-                    console.log ('Player chose Paper, Computer chose Rock. Player wins!');
+                    return ('Player chose Paper, Computer chose Rock. Player wins!');
                     break;
                 case playerSelection === 'paper' && computerSelection === 'scissors':
-                    console.log ('Player chose Paper, Computer chose Scissors. Computer wins!');
+                    return ('Player chose Paper, Computer chose Scissors. Computer wins!');
                     break;
                 case playerSelection === 'scissors' && computerSelection === 'rock':
-                    console.log ('Player chose Scissors, Computer chose Rock. Computer wins!');
+                    return ('Player chose Scissors, Computer chose Rock. Computer wins!');
                     break;
                 case playerSelection === 'scissors' && computerSelection === 'paper':
-                    console.log ('Player chose Scissors, Computer chose Paper. Computer wins!');
+                    return ('Player chose Scissors, Computer chose Paper. Computer wins!');
                     break;
                 default:
-                    console.log ('Game failure. Check for errors.');
+                    return ('Game failure. Check for errors.');
                 }
         }
+        playRound (playerSelection, computerSelection); 
     </script>
 </body>
 </html>
