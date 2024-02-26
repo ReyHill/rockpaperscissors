@@ -37,7 +37,9 @@
         const computerSelection = getComputerChoice ();
 
         function playGame () {
-            
+            // The issue is that the initial round is logged five times instead of the results of each round. 
+            // The player is only prompted once to input a choice for the game. 
+            // Log output also suggests that getComputerChoice() is either only run once or is run once and stuck with the same result. 
             console.log ( playRound (playerSelection, computerSelection) );
             console.log ( playRound (playerSelection, computerSelection) );
             console.log ( playRound (playerSelection, computerSelection) );
@@ -85,6 +87,7 @@
         /* 
         TO DO:
         ISSUE: When calling playRound () inside of playGame() five times, them initial round is copied for the other four instances. Will trace execution to find source issue. 
+        RESEARCH: Discover how to seperate game instances so the player and computer are given five seperate opportunities to input a choice instead of just one. 
         CODING: Write playGame(), which calls playRound() five times - try using a for loop. Call PlayGame() at bottom of script. 
         CODING: Program a win counter that compares the total wins by both sides and returns a winner declaration. 
         */
