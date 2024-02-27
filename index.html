@@ -10,7 +10,7 @@
         /*
          FUNCTION getComputerChoice - randomly return 'rock', 'paper', or 'scissors'.
          FUNCTION getPlayerSelection - prompts player to pick 'rock', 'paper', or 'scissors'. 
-         FUNCTION playRound - plays a single round of rock paper scissors. Takes two parameters, playerSelection and computerSelection. Then, returns a string that declares winner/tie.
+         FUNCTION playRound - plays a single round of rock paper scissors. Takes two parameters, playerSelection and computerSelection. Returns a string that declares winner/tie each round. 
          FUNCTION playGame - call the playRound function five times.
         */
 
@@ -33,21 +33,19 @@
             return input.toLowerCase();
         }
 
-        const playerSelection = getPlayerChoice()
+        const playerSelection = getPlayerChoice();
         const computerSelection = getComputerChoice ();
 
         function playGame () {
-            // The issue is that the initial round is logged five times instead of the results of each round. 
-            // The player is only prompted once to input a choice for the game. 
-            // Log output also suggests that getComputerChoice() is either only run once or is run once and stuck with the same result. 
-            console.log ( playRound (playerSelection, computerSelection) );
-            console.log ( playRound (playerSelection, computerSelection) );
-            console.log ( playRound (playerSelection, computerSelection) );
-            console.log ( playRound (playerSelection, computerSelection) );
-            console.log ( playRound (playerSelection, computerSelection) );
-            
+
+            for (let i = 1; i < 6; i++) {
+                let result = playRound (playerSelection, computerSelection); 
+                console.log (result); 
+            }
 
         function playRound (playerSelection, computerSelection) {
+            // this function needs to produce five different results instead of just one. 
+            // this function currently does not call the input functions more than once - will investigate how to integrate them here if possible. 
 
             switch (true) {
                 case playerSelection === 'rock' && computerSelection === 'rock':
@@ -86,10 +84,10 @@
 
         /* 
         TO DO:
-        ISSUE: When calling playRound () inside of playGame() five times, them initial round is copied for the other four instances. Will trace execution to find source issue. 
+        ISSUE: Inputs are only accepted once, as opposed to five times. Results in the console only logging the outcome of the first iteration.  
         RESEARCH: Discover how to seperate game instances so the player and computer are given five seperate opportunities to input a choice instead of just one. 
-        CODING: Write playGame(), which calls playRound() five times - try using a for loop. Call PlayGame() at bottom of script. 
-        CODING: Program a win counter that compares the total wins by both sides and returns a winner declaration. 
+        CODING: Write playGame(), which calls playRound() five times - try using a for loop. Remember to call PlayGame() at bottom of script. 
+        CODING: Program a win counter that compares the total wins by both sides and returns string declaring the winner. 
         */
 
     </script>
