@@ -32,20 +32,10 @@
             let input = prompt ('Rock, Paper, or Scissors?', ''); 
             return input.toLowerCase();
         }
-
-        const playerSelection = getPlayerChoice();
-        const computerSelection = getComputerChoice ();
-
-        function playGame () {
-
-            for (let i = 1; i < 6; i++) {
-                let result = playRound (playerSelection, computerSelection); 
-                console.log (result); 
-            }
-
+            
         function playRound (playerSelection, computerSelection) {
             // this function needs to produce five different results instead of just one. 
-            // this function currently does not call the input functions more than once - will investigate how to integrate them here if possible. 
+            // this function currently does not call the input functions more than once - will investigate how to integrate them here if possible.
 
             switch (true) {
                 case playerSelection === 'rock' && computerSelection === 'rock':
@@ -79,14 +69,18 @@
                     return ('Game failure. Check for errors.');
                 }
         }
-    }
-    playGame();
+
+        function playGame () {
+            for (let i = 1; i < 6; i++) {
+                const playerSelection = getPlayerChoice();
+                const computerSelection = getComputerChoice();
+                console.log ( playRound(playerSelection, computerSelection) );
+            }
+        }
+        playGame ();
 
         /* 
         TO DO:
-        ISSUE: Inputs are only accepted once, as opposed to five times. Results in the console only logging the outcome of the first iteration.  
-        RESEARCH: Discover how to seperate game instances so the player and computer are given five seperate opportunities to input a choice instead of just one. 
-        CODING: Write playGame(), which calls playRound() five times - try using a for loop. Remember to call PlayGame() at bottom of script. 
         CODING: Program a win counter that compares the total wins by both sides and returns string declaring the winner. 
         */
 
