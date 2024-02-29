@@ -25,17 +25,12 @@
         }
         }
 
-        // For now, the global constants playerSelection and computerSelection are defined with function calls as values. 
-        // It will be seen if this is a viable solution when the game needs to be run more than once - the keyword may need to be changed to 'let' or another fix may be needed. 
-
         function getPlayerChoice () {
             let input = prompt ('Rock, Paper, or Scissors?', ''); 
             return input.toLowerCase();
         }
             
         function playRound (playerSelection, computerSelection) {
-            // this function needs to produce five different results instead of just one. 
-            // this function currently does not call the input functions more than once - will investigate how to integrate them here if possible.
 
             switch (true) {
                 case playerSelection === 'rock' && computerSelection === 'rock':
@@ -69,6 +64,9 @@
                     return ('Game failure. Check for errors.');
                 }
         }
+
+        // In the function below, the calls are placed in variables, which enables them to provide a new value after each iteration of the for loop. 
+        // The absence of the for loop construct would result in console logging the first round of play five times, instead of producing new values for each round. 
 
         function playGame () {
             for (let i = 1; i < 6; i++) {
