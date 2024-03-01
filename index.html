@@ -12,7 +12,12 @@
          FUNCTION getPlayerSelection - prompts player to pick 'rock', 'paper', or 'scissors'. 
          FUNCTION playRound - plays a single round of rock paper scissors. Takes two parameters, playerSelection and computerSelection. Returns a string that declares winner/tie each round. 
          FUNCTION playGame - call the playRound function five times.
+         LET playerScore - variable that stores the player's number of wins.
+         LET computerSore - variable that stores the computer's number of wins. 
         */
+
+        let playerScore = 0;
+        let computerScore = 0;
 
         function getComputerChoice () {
             let calc = Math.floor (Math.random() * 3 );
@@ -43,25 +48,32 @@
                     return ('Tie!');
                     break;
                 case playerSelection === 'rock' && computerSelection === 'paper':
+                    computerScore++;
                     return ('Player chose Rock, Computer chose Paper. Computer wins!');
                     break;
                 case playerSelection === 'rock' && computerSelection === 'scissors':
+                    playerScore++;
                     return ('Player chose Rock, Computer chose Scissors. Player wins!');
                     break;
                 case playerSelection === 'paper' && computerSelection === 'rock':
+                    playerScore++;
                     return ('Player chose Paper, Computer chose Rock. Player wins!');
                     break;
                 case playerSelection === 'paper' && computerSelection === 'scissors':
+                    computerScore++;
                     return ('Player chose Paper, Computer chose Scissors. Computer wins!');
                     break;
                 case playerSelection === 'scissors' && computerSelection === 'rock':
+                    computerScore++;
                     return ('Player chose Scissors, Computer chose Rock. Computer wins!');
                     break;
                 case playerSelection === 'scissors' && computerSelection === 'paper':
-                    return ('Player chose Scissors, Computer chose Paper. Computer wins!');
+                    playerScore++;
+                    return ('Player chose Scissors, Computer chose Paper. Player wins!');
                     break;
                 default:
-                    return ('Game failure. Check for errors.');
+                    computerScore++
+                    return ("Think you're so smart huh? CPU wins the round just for that!");
                 }
         }
 
@@ -73,6 +85,13 @@
                 const playerSelection = getPlayerChoice();
                 const computerSelection = getComputerChoice();
                 console.log ( playRound(playerSelection, computerSelection) );
+            }
+            if (playerScore > computerScore) {
+                console.log (`You have won the game! You won ${playerScore} out of 5 rounds.`);
+            } else if (computerScore > playerScore) {
+                console.log (`The computer has won the game, with a victory in ${computerScore} out of 5 rounds.`);
+            } else if (playerScore === computerScore) {
+                console.log (`Well then - game has resulted in a tie!`);
             }
         }
         playGame ();
