@@ -79,13 +79,13 @@
 
         // In the function below, the calls are placed in variables, which enables them to provide a new value after each iteration of the for loop. 
         // The absence of the for loop construct would result in console logging the first round of play five times, instead of producing new values for each round. 
-
+        
         function playGame () {
-            for (let i = 1; i < 6; i++) {
+
                 const playerSelection = getPlayerChoice();
                 const computerSelection = getComputerChoice();
                 console.log ( playRound(playerSelection, computerSelection) );
-            }
+
             if (playerScore > computerScore) {
                 console.log (`You have won the game! You won ${playerScore} out of 5 rounds.`);
             } else if (computerScore > playerScore) {
@@ -95,7 +95,7 @@
             }
         }
         playGame ();
-
+        
         /* 
         TO DO:
         CODING: Program a win counter that compares the total wins by both sides and returns string declaring the winner. 
