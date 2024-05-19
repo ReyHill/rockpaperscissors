@@ -15,6 +15,18 @@
          LET playerScore - variable that stores the player's number of wins.
          LET computerSore - variable that stores the computer's number of wins. 
         */
+       
+        const rockBtn = document.createElement('button');
+        rockBtn.textContent = 'Rock';
+        document.body.appendChild(rockBtn);
+
+        const paperBtn = document.createElement('button');
+        paperBtn.textContent = 'Paper';
+        document.body.appendChild(paperBtn);
+
+        const scissorsBtn = document.createElement('button');
+        scissorsBtn.textContent = 'Scissors';
+        document.body.appendChild(scissorsBtn); 
 
         let playerScore = 0;
         let computerScore = 0;
@@ -94,7 +106,7 @@
                 console.log (`Well then - game has resulted in a tie!`);
             }
         }
-        playGame ();
+        // playGame ();
         
         /* 
         TO DO:
